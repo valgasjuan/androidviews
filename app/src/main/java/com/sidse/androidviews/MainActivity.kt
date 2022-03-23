@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun starUI() {
         binding.btnGotoApp.setOnClickListener {
+startActivity(Intent(this, motion_layout::class.java))
         }
     }
 }

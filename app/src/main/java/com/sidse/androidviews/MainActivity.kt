@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun starUI() {
         binding.btnGotoApp.setOnClickListener {
-            startActivity(Intent(this, entrega_mat::class.java))
         }
     }
 }

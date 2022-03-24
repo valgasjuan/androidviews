@@ -21,7 +21,9 @@
                motion:framePosition="100"
                android:scaleY="1.2" />
        </KeyFrameSet>
-        <OnSwipe motion:touchAnchorId="@+id/cl_Container" />
+        <OnSwipe
+            motion:touchAnchorId="@+id/vr_order_list"
+            motion:dragDirection="dragDown" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">

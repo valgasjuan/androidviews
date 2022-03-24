@@ -6,24 +6,18 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
-        motion:duration="1000">
+        motion:duration="8643">
        <KeyFrameSet>
            <KeyAttribute
                motion:motionTarget="@+id/cl_Container"
                motion:framePosition="100"
                android:alpha="0" />
-           <KeyAttribute
-               motion:motionTarget="@+id/cl_Container"
-               motion:framePosition="100"
-               android:scaleX="0" />
-           <KeyAttribute
-               motion:motionTarget="@+id/cl_Container"
-               motion:framePosition="100"
-               android:scaleY="1.2" />
        </KeyFrameSet>
         <OnSwipe
             motion:touchAnchorId="@+id/vr_order_list"
-            motion:dragDirection="dragDown" />
+            motion:dragDirection="dragDown"
+            motion:maxAcceleration="0.1"
+            motion:maxVelocity="0.85" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
@@ -33,9 +27,12 @@
         <Constraint
             android:id="@+id/cl_Container"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            motion:layout_constraintBottom_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent" />
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:transitionEasing="decelerate"
+            motion:pathMotionArc="startHorizontal" />
     </ConstraintSet>
 </MotionScene>
